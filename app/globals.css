@@ -1,0 +1,78 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ===== LINE デザインシステム: 静的カラーテーマ ===== */
+@theme {
+  /* プライマリー（LINE グリーン） */
+  --color-primary:            #06C755;
+  --color-primary-foreground: #FFFFFF;
+
+  /* テキスト */
+  --color-foreground:         #111111;
+  --color-card-foreground:    #111111;
+  --color-popover-foreground: #111111;
+
+  /* 背景 */
+  --color-background: #F5F5F5;
+  --color-card:       #FFFFFF;
+  --color-popover:    #FFFFFF;
+
+  /* セカンダリ・ミューテッド */
+  --color-secondary:            #F0F0F0;
+  --color-secondary-foreground: #111111;
+  --color-muted:                #F5F5F5;
+  --color-muted-foreground:     #666666;
+
+  /* アクセント（LINE グリーン薄め） */
+  --color-accent:            #E8F9EF;
+  --color-accent-foreground: #06C755;
+
+  /* ボーダー・インプット */
+  --color-border: #EEEEEE;
+  --color-input:  #E8E8E8;
+
+  /* リング（フォーカス） */
+  --color-ring: #06C755;
+
+  /* デストラクティブ */
+  --color-destructive: #E40014;
+
+  /* 角丸 */
+  --radius:    0.75rem;
+  --radius-sm: 0.45rem;
+  --radius-md: 0.6rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1.05rem;
+  --radius-2xl: 1.35rem;
+
+  /* サイドバー */
+  --color-sidebar:                    #FFFFFF;
+  --color-sidebar-foreground:         #111111;
+  --color-sidebar-primary:            #06C755;
+  --color-sidebar-primary-foreground: #FFFFFF;
+  --color-sidebar-accent:             #E8F9EF;
+  --color-sidebar-accent-foreground:  #06C755;
+  --color-sidebar-border:             #EEEEEE;
+  --color-sidebar-ring:               #06C755;
+
+  /* LINE カスタムカラー */
+  --color-line-green:       #06C755;
+  --color-line-green-light: #E8F9EF;
+  --color-line-green-dark:  #05A847;
+
+  /* フォント */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
