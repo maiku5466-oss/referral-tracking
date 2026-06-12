@@ -16,11 +16,19 @@ export interface Agency {
   updated_at: string
 }
 
+export interface PendingReferralClick {
+  id: string
+  referral_code: string
+  line_user_id: string | null
+  clicked_at: string
+  matched_at: string | null
+}
+
 export interface Prospect {
   id: string
   line_user_id: string
   agency_id: string | null
-  referral_code: string
+  referral_code: string | null
   name: string | null
   company_name: string | null
   phone: string | null
@@ -98,6 +106,12 @@ export interface Database {
         Row: WebhookLog
         Insert: Omit<WebhookLog, 'id' | 'created_at'> & { id?: string; created_at?: string }
         Update: Partial<WebhookLog>
+        Relationships: []
+      }
+      pending_referral_clicks: {
+        Row: PendingReferralClick
+        Insert: Omit<PendingReferralClick, 'id' | 'clicked_at'> & { id?: string; clicked_at?: string }
+        Update: Partial<PendingReferralClick>
         Relationships: []
       }
     }
