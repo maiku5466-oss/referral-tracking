@@ -17,7 +17,15 @@ export default async function DashboardPage() {
     .single()
   const agency = agencyData as Pick<Agency, 'id' | 'name' | 'commission_rate'> | null
 
-  if (!agency) redirect('/login')
+  if (!agency) {
+    return (
+      <div className="flex items-center justify-center h-64">
+        <p className="text-sm text-[#666666]">
+          代理店情報が見つかりません。管理者にお問い合わせください。
+        </p>
+      </div>
+    )
+  }
 
   const { data: prospectsData } = await supabase
     .from('prospects')
